@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html id="success">
+    <head>
+        <title>Certificate Test</title>
+        <style>
+            html, body
+            {
+                font-family: "Roboto", Arial, Helvetica, sans-serif;
+            }
+
+            html#success #fail-renderer,
+            html#fail #success-renderer
+            {
+                display: none !important;
+            }
+
+            #noscript-renderer
+            {
+                font-size: 8px;
+                color: #444;
+            }
+
+            .success
+            {
+                color: #10a020;
+            }
+
+            .fail
+            {
+                color: #dd2f0c;
+            }
+        </style>
+        <script>
+            if (window.location && "www.youtube.com" != window.location.hostname)
+            {
+                document.documentElement.id = "fail";
+            }
+        </script>
+    </head>
+    <body>
+        <noscript>
+            <style>
+                #success-renderer, #fail-renderer
+                {
+                    display: none !important;
+                }
+            </style>
+            <div id="noscript-notice">
+                <h1>What were you expecting...?</h1>
+                JavaScript must be enabled in order to detect if this works or not.
+            </div>
+        </noscript>
+        <div id="success-renderer">
+            <h1 class="success">Success!</h1>
+            The certificate successfully works on www.youtube.com.
+        </div>
+        <div id="fail-renderer">
+            <h1 class="fail">Failed.</h1>
+            You visited this page through a different endpoint than you should have. Try <a href="www.youtube.com">www.youtube.com</a> ;)
+        </div>
+    </body>
+</html>

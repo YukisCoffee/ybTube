@@ -1,0 +1,18 @@
+{
+    "compilerOptions": {
+        "baseUrl": ".",
+        "outDir": "../server",
+        "types": ["node"],
+        "target": "es2020",
+        "module": "commonjs",
+        "watch": true,
+        "noImplicitAny": false,
+        "strictNullChecks": false,
+        "paths": {
+            "*": ["./*", "../node_modules/*"]
+        }
+    },
+    "types": [ "node" ],
+    "typeRoots": [ "./node_modules/@types" ],
+    "exclude": [ "node_modules" ]
+}

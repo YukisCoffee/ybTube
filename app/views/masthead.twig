@@ -1,0 +1,29 @@
+{% from "ui/masthead/M_search.twig" import search %}
+{% from "ui/component/M_yt_icon_button.twig" import iconButton %}
+
+{% set topbar = page.topbar.desktopTopbarRenderer %}
+
+<div id="masthead" class="yt-masthead">
+    <div class="start">
+        <button id="guide-toggle-button" class="yt-icon-button paper-ripple" data-paper-ripple-center="true">
+            <div class="yt-icon">{{ icon("menu") | safe }}</div>
+        </button>
+        <a href="/" id="logo-container" class="yt-logo">
+            <div class="logo">
+                {{ icon("youtube-logo") | safe }}
+            </div>
+        </a>
+    </div>
+    <div class="center">
+        {% if topbar.searchbox.fusionSearchboxRenderer %}
+            {{ search(topbar.searchbox.fusionSearchboxRenderer) }}
+        {% endif %}
+    </div>
+    <div class="end">
+        {% for item in topbar.topbarButtons %}
+            {% if item.topbarMenuButtonRenderer %}
+                {{ iconButton(item.topbarMenuButtonRenderer) }}
+            {% endif %}
+        {% endfor %}
+    </div>
+</div>

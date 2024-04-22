@@ -1,0 +1,70 @@
+/**
+ * Implements styles for the Material ripple effect.
+ *
+ * Animations are implemented in JS in: ui/ripple.ts
+ */
+
+.paper-ripple
+{
+    position: relative;
+}
+
+.paper-ripple-container
+{
+    display: block;
+    position: absolute;
+    border-radius: inherit;
+    overflow: hidden;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    pointer-events: none;
+    z-index: -1;
+
+    & .background,
+    & .waves,
+    & .wave-container,
+    & .wave
+    {
+        pointer-events: none;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+    }
+
+    & .background,
+    & .wave
+    {
+        background: #000; // temp probably
+        opacity: 0;
+    }
+
+    & .waves,
+    & .wave
+    {
+        overflow: hidden;
+    }
+
+    & .wave-container,
+    & .wave
+    {
+        border-radius: 50%;
+    }
+
+    #{paper-ripple}.center &
+    {
+        & .background,
+        & .waves
+        {
+            border-radius: 50%;
+        }
+
+        & .wave-container
+        {
+            overflow: hidden;
+        }
+    }
+}

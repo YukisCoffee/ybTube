@@ -1,0 +1,21 @@
+#logo-container
+{
+    display: inline-block;
+    width: 129px;
+}
+#logo-container .logo
+{
+    height: 20px;
+    width: 90px;
+    padding: 18px 14px 18px 16px;
+}
+
+#masthead .start
+{
+    display: inline-block;
+}
+
+#masthead .start > *
+{
+    vertical-align: middle;
+}

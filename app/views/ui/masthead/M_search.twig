@@ -1,0 +1,32 @@
+{% macro search(sb) %}
+    {% set label = sb.placeholderText.runs[0].text %}
+    <div class="searchbox" id="search">
+        <form action="/results" id="search-form">
+            <div class="container">
+                <div class="icon" id="search-icon">
+                    {{ icon("search") | safe }}
+                </div>
+                <div id="search-input">
+                    <input type="text"
+                        autocapitalize="none"
+                        autocomplete="off"
+                        autocorrect="off"
+                        name="search_query"
+                        tabindex="0"
+                        spellcheck="false"
+                        placeholder="{{ label }}"
+                        aria-label="{{ label }}"
+                        role="combobox"
+                        aria-haspopup="false"
+                        aria-autocomplete="list"
+                    >
+                </div>
+            </div>
+        </form>
+        <button id="search-icon-legacy" aria-label="{{ label }}" title="{{ label }}" class="yt-tooltip">
+            <div class="yt-icon">
+                {{ icon("search") | safe }}
+            </div>
+        </button>
+    </div>
+{% endmacro %}

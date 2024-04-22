@@ -1,0 +1,12 @@
+{% set results = page.contents.twoColumnBrowseResultsRenderer.tabs[0].tabRenderer %}
+<div id="browse" class="" data-browse-id="{{ results.tabIdentifier }}">
+    {% if results.content.richGridRenderer  %}
+        <div class="shelf rich-grid-shelf">
+            {% for item in results.content.richGridRenderer.contents %}
+                <div class="video-item rich-item-renderer">
+                    {{ item.richItemRenderer.content.videoRenderer.videoId }}
+                </div>
+            {% endfor %}
+        </div>
+    {% endif %}
+</div>

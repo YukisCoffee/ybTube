@@ -1,0 +1,65 @@
+/**
+ * Masthead design
+ */
+
+.yt-masthead
+{
+    height: 56px;
+    padding: 0 16px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+
+    // Start and end general styles
+    & .start, & .end
+    {
+        display: flex;
+        flex-direction: row;
+    }
+
+    // Start styles
+    & .start
+    {
+        align-items: center;
+    }
+
+    // End styles
+    & .end
+    {
+        min-width: 225px;
+        align-items: center;
+        justify-content: flex-end;
+
+        flex: none;
+    }
+
+    // Center styles
+    & .center
+    {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        flex: 0 1 728px;
+        min-width: 0px;
+
+        margin: 0 auto;
+    }
+
+    // Searchbox styles
+    @import "./masthead/searchbox.scss";
+}
+
+// Logo styles
+.yt-logo
+{
+    display: inline-block;
+    width: 129px;
+
+    & .logo
+    {
+        height: 20px;
+        width: 90px;
+        padding: 18px 14px 18px 16px;
+    }
+}

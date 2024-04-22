@@ -1,0 +1,5 @@
+// IE doesn't support CSS variables, so dark mode must be implemented
+// through something like this
+
+$forceDarkMode: true;
+@import "core.dist.scss";
