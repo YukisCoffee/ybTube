@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>YouTube</title>
+        <link rel="stylesheet" href="/s/cssbin/core.css">
+        <script>var yt = yt || {}; yt.config_ = yt.config_ || {};</script>
+    </head>
+    <body class="ybtube-app" data-yt-theme="kevlar" dir="ltr">
+        <div id="body-container">
+            {% include "masthead.njk" %}
+            <div id="page-container">
+                <div id="guide">
+                </div>
+                <div id="page">
+                    <div id="content">
+                        {#
+                            Page is rendered conditionally through these
+                            statements.
+                        #}
+                        {% if page.contents.twoColumnBrowseResultsRenderer %}
+                            {% include "browse/browse.njk" %}
+                        {% endif %}
+                        {% if page.uixTest %}
+                            {% include "uixtest.njk" %}
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script type="text/javascript" src="/s/jsbin/core.js"></script>
+    </body>
+</html>

@@ -1,0 +1,19 @@
+{%- macro iconButton(data, id) -%}
+    {# If a target ID is available in the payload and there
+       is no specified ID, use that.
+     #}
+    {% if not id and data.targetId %}
+        {% set id = data.targetId %}
+    {% endif %}
+    <button {{ attr({
+        "id": id,
+        "tooltip": data.tooltip,
+        "class": [
+            "yt-icon-button",
+            "paper-ripple"
+        ],
+        "dataPaperRippleCenter": true
+    }) }}>
+        <div class="yt-icon">{{ icon(data.icon.iconType) | safe }}</div>
+    </button>
+{%- endmacro -%}
